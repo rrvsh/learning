@@ -1,0 +1,18 @@
+Hi!
+
+This is a file where I am going to practise using neovim.
+
+# Deleting
+
+The quick brown fox jumps over the lazy dog.
+The quuickk brownn ffox juymps over tthe lazzzzy doggg.
+
+# Inserting
+
+The qick bown fox jmover the lazy d.
+The quick brown fox jumps over the lazy dog.
+
+# Appending
+
+The quick brown fox
+The quick brown fox jumps over the lazy dog.
