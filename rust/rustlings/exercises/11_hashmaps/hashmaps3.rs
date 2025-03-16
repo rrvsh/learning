@@ -32,24 +32,12 @@ fn build_scores_table(results: &str) -> HashMap<&str, TeamScores> {
         // conceded by team 2. Similarly, goals scored by team 2 will be the
         // number of goals conceded by team 1.
         // Check if the entry exists and instantiate it if not
-        fn update_score(initial_team_score: &mut TeamScores, goals_scored: u8, goals_conceded: u8) {
-            initial_team_score.goals_scored += goals_scored;
-            initial_team_score.goals_conceded += goals_conceded;
-        }
-        scores
-            .entry(team_1_name)
-            .and_modify(|e| update_score(e, team_1_score, team_2_score))
-            .or_insert(TeamScores {
-                goals_scored: team_1_score,
-                goals_conceded: team_2_score,
-            });
-        scores
-            .entry(team_2_name)
-            .and_modify(|e| update_score(e, team_2_score, team_1_score))
-            .or_insert(TeamScores {
-                goals_scored: team_2_score,
-                goals_conceded: team_1_score,
-            });
+        let team_1_scores = scores.entry(team_1_name).or_default();
+        team_1_scores.goals_scored += team_1_score;
+        team_1_scores.goals_conceded += team_2_score;
+        let team_2_scores = scores.entry(team_2_name).or_default();
+        team_2_scores.goals_scored += team_2_score;
+        team_2_scores.goals_conceded += team_1_score;
     }
 
     scores
