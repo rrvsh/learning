@@ -23,6 +23,8 @@ def hello(username=None):
     return render_template("hello.html", person=username)
 
 
+# Thanks to https://testdriven.io/blog/flask-sessions/
+
 # Details on the Secret Key: https://flask.palletsprojects.com/en/2.3.x/config/#SECRET_KEY
 # NOTE: The secret key is used to cryptographically-sign the cookies used for storing
 #       the session data.
