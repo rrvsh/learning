@@ -28,3 +28,15 @@ while n <= 10 do
   print(fib(n))
   n = n + 1
 end
+
+print("")
+
+
+print("Closures:")
+local function adder(x)
+  return function(y) return x + y end
+end
+local a = adder(10) -- a becomes a function
+print(a(5))
+local b = a
+print(b(10))
