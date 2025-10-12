@@ -1,3 +1,9 @@
+## Checklist
+
+- Init Nix flake with simple devshell of python3 and uv?
+- init uv workspace
+- use uv2nix to integrate uv workspace into the flake.
+
 ## Build Backends
 
 Python needs a build backend to package the code into a wheel or tarball.
